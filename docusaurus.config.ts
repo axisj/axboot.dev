@@ -25,8 +25,9 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ko',
+    locales: ["ko", "en"],
+
   },
 
   presets: [
@@ -58,7 +59,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'AXBoot.dev',
+      title: 'oot.dev',
       logo: {
         alt: 'AXBoot.dev Logo',
         src: 'img/logo.svg',
@@ -71,6 +72,10 @@ const config: Config = {
           label: 'Tutorial',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'localeDropdown',
+          position: 'right',
+        },
         {
           href: 'https://github.com/axisj/axboot.dev',
           label: 'GitHub',

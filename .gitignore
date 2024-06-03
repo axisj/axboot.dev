@@ -1,4 +1,5 @@
 /.idea
+/.backup
 
 # Dependencies
 /node_modules

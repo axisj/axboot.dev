@@ -1,7 +1,23 @@
+.navbar__brand {
+    min-width: 132px;
+    display: flex;
+    align-items: center;
+}
+.navbar__logo {
+    height: 32px;
+}
 .navbar__logo img {
     width: 32px;
     height: 32px;
 }
-.navbar__brand {
-    min-width: 132px;
+.navbar__title {
+    padding-top: 2px;
+    font-size: 18px;
+    font-family: "GmarketSans", sans-serif;
+    font-weight: 500;
+    line-height: 1;
+    &:before {
+        content: "AXB";
+        font-weight: 700;
+    }
 }
