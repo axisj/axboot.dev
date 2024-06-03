@@ -1,0 +1,7 @@
+.navbar__logo img {
+    width: 32px;
+    height: 32px;
+}
+.navbar__brand {
+    min-width: 132px;
+}
