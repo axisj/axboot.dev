@@ -103,6 +103,10 @@ const config: Config = {
               label: 'Tutorial',
               to: '/docs/intro',
             },
+            {
+              label: 'API',
+              to: '/docs/api/back-end/system-api',
+            },
           ],
         },
         {
