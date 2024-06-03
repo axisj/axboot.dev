@@ -11,12 +11,77 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
  Create as many sidebars as you want.
  */
 const sidebars: SidebarsConfig = {
-  tutorialSidebar: ['intro', {
-    type: 'category',
-    label: 'Back-End',
-    items: ['back-end/dev-environment'],
-  }],
-  apiSidebar: ['back-end/system-api'],
+  tutorialSidebar: [
+    'intro',
+    'installation',
+    'quick-start-guide',
+    'system-requirement',
+    {
+      type: 'category',
+      label: '백엔드(Back-End)',
+      items: [
+        'tutorial/back-end/dev-environment',
+        'tutorial/back-end/spring-security',
+        'tutorial/back-end/code-generation',
+        'tutorial/back-end/create-api-interface',
+        'tutorial/back-end/system-api-customizing',
+      ],
+    },
+    {
+      type: 'category',
+      label: '프론트엔드(Front-End)',
+      items: [
+        'tutorial/front-end/router',
+        'tutorial/front-end/page-frame',
+        'tutorial/front-end/program',
+        'tutorial/front-end/program-store',
+        'tutorial/front-end/template',
+        'tutorial/front-end/service-repository',
+        'tutorial/front-end/i18n',
+        'tutorial/front-end/theme',
+      ],
+    }
+  ],
+  apiSidebar: [
+    {
+      type: 'category',
+      label: '백엔드(Back-End)',
+      items: [
+        'api/back-end/system-api',
+        'api/back-end/system-api-specification',
+      ],
+    },
+    {
+      type: 'category',
+      label: '프론트엔드(Front-End)',
+      items: [
+        {
+          type: 'category',
+          label: '코어컴포넌트',
+          items: [
+            'api/front-end/core-component/datagrid',
+            'api/front-end/core-component/datagrid-editor',
+            'api/front-end/core-component/drawer-store',
+            'api/front-end/core-component/modal-store',
+            'api/front-end/core-component/MultiFilter',
+            'api/front-end/core-component/program-title',
+            'api/front-end/core-component/SearchParams',
+            'api/front-end/core-component/StatTable',
+          ],
+        }
+      ],
+    },
+    {
+      type: 'category',
+      label: '내장모듈',
+      items: ['api/module-builtin/user'],
+    },
+    {
+      type: 'category',
+      label: '추가모듈',
+      items: ['api/module-additional/excel-converter'],
+    }
+  ],
 };
 
 export default sidebars;

@@ -3,6 +3,9 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
+  markdown: {
+    mermaid: true
+  },
   title: 'AXBoot.dev',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
@@ -59,6 +62,8 @@ const config: Config = {
       logo: {
         alt: 'AXBoot.dev Logo',
         src: 'img/logo.svg',
+        width: 32,
+        height: 32,
       },
       items: [
         {
@@ -74,6 +79,9 @@ const config: Config = {
           label: 'API',
         },
         {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/success-stories', label: 'Success Stories', position: 'left'},
+        {to: '/pricing', label: 'Pricing', position: 'left'},
+        {to: '/get-in-touch', label: 'Get in Touch', position: 'left'},
         {
           type: 'localeDropdown',
           position: 'right',
