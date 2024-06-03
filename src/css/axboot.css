@@ -16,8 +16,8 @@
     font-family: "GmarketSans", sans-serif;
     font-weight: 500;
     line-height: 1;
-    &:before {
-        content: "AXB";
-        font-weight: 700;
-    }
+}
+.navbar__title::before {
+    content: "AXB";
+    font-weight: 700;
 }
