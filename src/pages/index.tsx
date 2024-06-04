@@ -23,7 +23,7 @@ export default function App(): JSX.Element {
             <Link
               className="button button--secondary button--lg"
               to="/docs/intro">
-              Docusaurus Tutorial - 5min ⏱️
+              AXBoot Tutorial - 5min ⏱️
             </Link>
           </div>
         </div>

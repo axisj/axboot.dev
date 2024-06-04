@@ -7,7 +7,7 @@ const config: Config = {
     mermaid: true
   },
   title: 'AXBoot.dev',
-  tagline: 'Dinosaurs are cool',
+  tagline: 'Bootstrap Your Admin with Rich UI',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -56,7 +56,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/axboot-sns.jpg',
     navbar: {
       title: 'oot.dev',
       logo: {
