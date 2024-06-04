@@ -7,7 +7,7 @@ const config: Config = {
     mermaid: true
   },
   title: 'AXBoot.dev',
-  tagline: 'Bootstrap Your Admin with Rich UI',
+  tagline: 'Bootstrap Your Admin with a Rich UI',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
