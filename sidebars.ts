@@ -13,12 +13,12 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
-    'installation',
+    // 'installation',
     'quick-start-guide',
     'system-requirement',
     {
       type: 'category',
-      label: '백엔드(Back-End)',
+      label: 'Back-End',
       items: [
         'tutorial/back-end/dev-environment',
         'tutorial/back-end/spring-security',
@@ -29,7 +29,7 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '프론트엔드(Front-End)',
+      label: 'Front-End',
       items: [
         'tutorial/front-end/router',
         'tutorial/front-end/page-frame',
@@ -45,7 +45,7 @@ const sidebars: SidebarsConfig = {
   apiSidebar: [
     {
       type: 'category',
-      label: '백엔드(Back-End)',
+      label: 'Back-End',
       items: [
         'api/back-end/system-api',
         'api/back-end/system-api-specification',
@@ -53,11 +53,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '프론트엔드(Front-End)',
+      label: 'Front-End',
       items: [
         {
           type: 'category',
-          label: '코어컴포넌트',
+          label: 'Components',
           items: [
             'api/front-end/core-component/datagrid',
             'api/front-end/core-component/datagrid-editor',
@@ -73,12 +73,12 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
-      label: '내장모듈',
+      label: 'Internal Module',
       items: ['api/module-builtin/user'],
     },
     {
       type: 'category',
-      label: '추가모듈',
+      label: 'External Module',
       items: ['api/module-additional/excel-converter'],
     }
   ],

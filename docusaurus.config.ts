@@ -40,7 +40,7 @@ const config: Config = {
         docs: {
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/axisj/axboot.dev/tree/main/docs/',
+            'https://github.com/axisj/axboot.dev/tree/main',
         },
         blog: {
           showReadingTime: true,
