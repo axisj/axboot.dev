@@ -70,7 +70,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: '튜토리얼',
         },
         {
           type: 'docSidebar',
@@ -78,10 +78,10 @@ const config: Config = {
           position: 'left',
           label: 'API',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {to: '/success-stories', label: 'Success Stories', position: 'left'},
-        {to: '/pricing', label: 'Pricing', position: 'left'},
-        {to: '/get-in-touch', label: 'Get in Touch', position: 'left'},
+        {to: '/blog', label: '블로그', position: 'left'},
+        {to: '/success-stories', label: '성공사례', position: 'left'},
+        {to: '/pricing', label: '가격', position: 'left'},
+        {to: '/get-in-touch', label: '액시스제이', position: 'left'},
         {
           type: 'localeDropdown',
           position: 'right',
