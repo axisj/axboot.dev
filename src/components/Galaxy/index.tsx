@@ -56,7 +56,7 @@ export default function Galaxy() {
                 ARM_X_DIST
             );
 
-            stars.push(<Star position={pos} size={size} />);
+            stars.push(<Star key={`${arm}=${star}`} position={pos} size={size} />);
         }
     }
 

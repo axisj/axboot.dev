@@ -4,27 +4,34 @@ import { Canvas, extend, useThree, useFrame } from '@react-three/fiber'
 import { useGLTF, useTexture, Environment, Lightformer } from '@react-three/drei'
 import { BallCollider, CuboidCollider, Physics, RigidBody, useRopeJoint, useSphericalJoint } from '@react-three/rapier'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
-import { useControls } from 'leva'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
-useGLTF.preload('img/astronaut.glb')
-useTexture.preload('img/band.jpg')
+useGLTF.preload('/img/astronaut.glb')
+useTexture.preload('/img/band.jpg')
 
 
 interface PropsType {
-    // position: THREE.Vector3;
-    // size: number;
+    maxSpeed?: number;
+    minSpeed?: number;
 }
 
-export default function Astronaut({}: PropsType) {
-    const band = useRef(null), fixed = useRef(null), j1 = useRef(null), j2 = useRef(null), j3 = useRef(null), astronaut = useRef(null) // prettier-ignore
+export default function Astronaut({
+  maxSpeed=50,
+  minSpeed=10
+}: PropsType) {
+    const band = useRef(null)
+    const fixed = useRef(null)
+    const j1 = useRef(null);
+    const j2 = useRef(null);
+    const j3 = useRef(null);
+    const astronaut = useRef(null);
     const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3() // prettier-ignore
-    const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 }
+    const segmentProps = { type: 'dynamic', canSleep: true, colliders: false, angularDamping: 2, linearDamping: 2 } as any;
     const { nodes, materials } = useGLTF('img/astronaut.glb')
     const texture = useTexture('img/band.jpg')
     const { width, height } = useThree((state) => state.size)
     const [curve] = useState(() => new THREE.CatmullRomCurve3([new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()]))
-    const [dragged, drag] = useState(false)
+    const [dragged, drag] = useState<any>(false)
     const [hovered, hover] = useState(false)
 
     useRopeJoint(fixed, j1, [[0, 0, 0], [0, 0, 0], 1]) // prettier-ignore
@@ -71,6 +78,7 @@ export default function Astronaut({}: PropsType) {
     curve.curveType = 'chordal'
     texture.wrapS = texture.wrapT = THREE.RepeatWrapping
 
+    // @ts-ignore
     return (
         <>
             <group position={[0, 4, 0]}>
@@ -91,13 +99,13 @@ export default function Astronaut({}: PropsType) {
                         position={[0, -1.2, -0.05]}
                         onPointerOver={() => hover(true)}
                         onPointerOut={() => hover(false)}
-                        onPointerUp={(e) => (e.target.releasePointerCapture(e.pointerId), drag(false))}
-                        onPointerDown={(e) => (e.target.setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(astronaut.current.translation()))))}>
-                        <mesh geometry={nodes.astronaut.geometry}>
-                            <meshPhysicalMaterial map={materials.base.map} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
+                        onPointerUp={(e) => ((e.target as any).releasePointerCapture(e.pointerId), drag(false))}
+                        onPointerDown={(e) => ((e.target as any).setPointerCapture(e.pointerId), drag(new THREE.Vector3().copy(e.point).sub(vec.copy(astronaut.current.translation()))))}>
+                        <mesh geometry={nodes.card?.["geometry"] ?? {}}>
+                            <meshPhysicalMaterial map={materials.base["map"]} map-anisotropy={16} clearcoat={1} clearcoatRoughness={0.15} roughness={0.3} metalness={0.5} />
                         </mesh>
-                        <mesh geometry={nodes.clip.geometry} material={materials.metal} material-roughness={0.3} />
-                        <mesh geometry={nodes.clamp.geometry} material={materials.metal} />
+                        <mesh geometry={nodes.clip["geometry"]} material={materials.metal} material-roughness={0.3} />
+                        <mesh geometry={nodes.clamp["geometry"]} material={materials.metal} />
                     </group>
                 </RigidBody>
             </group>

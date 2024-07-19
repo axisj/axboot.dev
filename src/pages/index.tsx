@@ -26,15 +26,9 @@ function genBackgroundStars() {
             getRandomInt(-50000, 50000),
             getRandomInt(-50000, 50000)
         );
-        stars.push(<Star position={pos} size={size} />);
+        stars.push(<Star key={i} position={pos} size={size} />);
     }
     return stars;
-}
-
-const astronaout_style = {
-    backgroundColor: "transparent",
-    position:"absolute",
-    zIndex:99
 }
 
 export default function App(): JSX.Element {
@@ -45,16 +39,20 @@ export default function App(): JSX.Element {
       description="Description will go into a meta tag in <head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className="heroContainer" style={{width: "100vw", height: "80vh"}}>
-              <img
-                  style={astronaout_style}
-                  className={''}
-                  alt={''}
-                  src={'/img/astronaut_cr_12.png'}
-              />
+              {/*<img*/}
+              {/*    style={{*/}
+              {/*      backgroundColor: "transparent",*/}
+              {/*      position:"absolute",*/}
+              {/*      zIndex:99,*/}
+              {/*    }}*/}
+              {/*    className={''}*/}
+              {/*    alt={''}*/}
+              {/*    src={'/img/astronaut_cr_12.png'}*/}
+              {/*/>*/}
               <Canvas
                   camera={{
-                      position: [10000, 10000, 10000],
-                      rotation: [-0.5, 0, 0],
+                      position: [5000, 2000, 1000],
+                      rotation: [-1, 0, 0],
                       far: 100000,
                   }}
               >
@@ -65,25 +63,10 @@ export default function App(): JSX.Element {
                   {genBackgroundStars()}
                   <Galaxy/>
 
-
-                  {/*<Physics interpolate gravity={[0, -5, 0]} timeStep={1 / 60}>*/}
-                  {/*    <Astronaut />*/}
-                  {/*</Physics>*/}
+                  <Physics interpolate gravity={[0, -5, 0]} timeStep={1 / 60}>
+                      <Astronaut />
+                  </Physics>
               </Canvas>
-
-
-              {/*<Heading as="h1" className="hero__title">*/}
-              {/*  {siteConfig.title}*/}
-              {/*</Heading>*/}
-
-              {/*<p className="hero__subtitle">{siteConfig.tagline}</p>*/}
-              {/*<div className={styles.buttons}>*/}
-              {/*  <Link*/}
-              {/*    className="button button--secondary button--lg"*/}
-              {/*    to="/docs/intro">*/}
-              {/*    AXBoot Tutorial - 5min ⏱️*/}
-              {/*  </Link>*/}
-              {/*</div>*/}
           </div>
       </header>
         <main>
