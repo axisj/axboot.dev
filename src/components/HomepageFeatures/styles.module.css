@@ -9,3 +9,21 @@
   height: 200px;
   width: 200px;
 }
+
+.heading > span{
+  vertical-align: middle;
+}
+
+.desc{
+ text-align: left;
+  word-break: keep-all;
+}
+
+pro{
+  font-size:0.8rem;
+  font-weight:bold;
+  border:1px solid #000;
+  border-radius: 4px;
+  padding: 0.2rem 0.25rem;
+  margin-left:0.5rem;
+}

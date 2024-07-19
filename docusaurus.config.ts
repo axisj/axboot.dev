@@ -58,11 +58,12 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/axboot-sns.jpg',
     navbar: {
-      title: 'oot.dev',
+      title: 'axboot.dev',
       logo: {
         alt: 'AXBoot.dev Logo',
-        src: 'img/logo.svg',
-        width: 32,
+        src: 'img/axb_logo.svg',
+        srcDark: 'img/axb_logo_dark.svg',
+        width: 126,
         height: 32,
       },
       items: [
@@ -70,7 +71,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: '튜토리얼',
+          label: 'Tutorial',
         },
         {
           type: 'docSidebar',
@@ -78,10 +79,10 @@ const config: Config = {
           position: 'left',
           label: 'API',
         },
-        {to: '/blog', label: '블로그', position: 'left'},
-        {to: '/success-stories', label: '성공사례', position: 'left'},
-        {to: '/pricing', label: '가격', position: 'left'},
-        {to: '/get-in-touch', label: '액시스제이', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/success-stories', label: 'Case Study', position: 'left'},
+        {to: '/pricing', label: 'Store', position: 'left'},
+        {to: '/get-in-touch', label: 'AXISJ', position: 'left'},
         {
           type: 'localeDropdown',
           position: 'right',

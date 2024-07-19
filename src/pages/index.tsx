@@ -7,6 +7,7 @@ import Heading from '@theme/Heading';
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Physics } from '@react-three/rapier'
 
 import styles from './index.module.css';
 
@@ -14,6 +15,7 @@ import * as THREE from "three";
 import {getRandomInt, gaussianRandom} from "@site/src/components/utils/random";
 import Star from "@site/src/components/Star";
 import Galaxy from "@site/src/components/Galaxy";
+import Astronaut from "@site/src/components/Astronaut";
 
 function genBackgroundStars() {
     const stars = [];
@@ -29,6 +31,11 @@ function genBackgroundStars() {
     return stars;
 }
 
+const astronaout_style = {
+    backgroundColor: "transparent",
+    position:"absolute",
+    zIndex:99
+}
 
 export default function App(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
@@ -37,39 +44,51 @@ export default function App(): JSX.Element {
       title={`Home`}
       description="Description will go into a meta tag in <head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
-        <div className="heroContainer" style={{ width: "100vw", height: "80vh" }}>
-            <Canvas
-                camera={{
-                    position: [10000, 10000, 10000],
-                    rotation: [-0.5, 0, 0],
-                    far: 100000,
-                }}
-            >
-                <color attach="background" args={["#000"]} />
-                <ambientLight color={"#fff"} intensity={5} />
-                {/*<axesHelper args={[20000]} />*/}
-                <OrbitControls />
-                {genBackgroundStars()}
-                <Galaxy />
-            </Canvas>
+          <div className="heroContainer" style={{width: "100vw", height: "80vh"}}>
+              <img
+                  style={astronaout_style}
+                  className={''}
+                  alt={''}
+                  src={'/img/astronaut_cr_12.png'}
+              />
+              <Canvas
+                  camera={{
+                      position: [10000, 10000, 10000],
+                      rotation: [-0.5, 0, 0],
+                      far: 100000,
+                  }}
+              >
+                  <color attach="background" args={["#000"]}/>
+                  <ambientLight color={"#fff"} intensity={5}/>
+                  {/*<axesHelper args={[20000]} />*/}
+                  <OrbitControls enableZoom={false}/> /* 마우스 스크롤을 위해 줌은 막습니다 */
+                  {genBackgroundStars()}
+                  <Galaxy/>
 
-          {/*<Heading as="h1" className="hero__title">*/}
-          {/*  {siteConfig.title}*/}
-          {/*</Heading>*/}
 
-          {/*<p className="hero__subtitle">{siteConfig.tagline}</p>*/}
-          {/*<div className={styles.buttons}>*/}
-          {/*  <Link*/}
-          {/*    className="button button--secondary button--lg"*/}
-          {/*    to="/docs/intro">*/}
-          {/*    AXBoot Tutorial - 5min ⏱️*/}
-          {/*  </Link>*/}
-          {/*</div>*/}
-        </div>
+                  {/*<Physics interpolate gravity={[0, -5, 0]} timeStep={1 / 60}>*/}
+                  {/*    <Astronaut />*/}
+                  {/*</Physics>*/}
+              </Canvas>
+
+
+              {/*<Heading as="h1" className="hero__title">*/}
+              {/*  {siteConfig.title}*/}
+              {/*</Heading>*/}
+
+              {/*<p className="hero__subtitle">{siteConfig.tagline}</p>*/}
+              {/*<div className={styles.buttons}>*/}
+              {/*  <Link*/}
+              {/*    className="button button--secondary button--lg"*/}
+              {/*    to="/docs/intro">*/}
+              {/*    AXBoot Tutorial - 5min ⏱️*/}
+              {/*  </Link>*/}
+              {/*</div>*/}
+          </div>
       </header>
-      <main>
-        <HomepageFeatures/>
-      </main>
+        <main>
+            <HomepageFeatures/>
+        </main>
     </Layout>
   );
 }

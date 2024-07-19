@@ -7,17 +7,20 @@
     height: 32px;
 }
 .navbar__logo img {
-    width: 32px;
+    width: 126px;
     height: 32px;
 }
-.navbar__title {
-    padding-top: 2px;
-    font-size: 18px;
-    font-family: "GmarketSans", sans-serif;
-    font-weight: 500;
-    line-height: 1;
+.navbar__title{
+    display: none;
 }
-.navbar__title::before {
-    content: "AXB";
-    font-weight: 700;
-}
+/*.navbar__title {*/
+/*    padding-top: 2px;*/
+/*    font-size: 18px;*/
+/*    font-family: "GmarketSans", sans-serif;*/
+/*    font-weight: 500;*/
+/*    line-height: 1;*/
+/*}*/
+/*.navbar__title::before {*/
+/*    content: "AXB";*/
+/*    font-weight: 700;*/
+/*}*/
