@@ -1,72 +1,51 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
+import {Environment, Lightformer, OrbitControls, useGLTF, useTexture} from '@react-three/drei'
+import {Canvas, extend} from '@react-three/fiber'
+import {Physics} from '@react-three/rapier'
+import {Band} from "@site/src/components/band/Band.js";
+import Galaxy from "@site/src/components/Galaxy";
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { Physics } from '@react-three/rapier'
+import Layout from '@theme/Layout';
+import clsx from 'clsx';
+import {useControls} from 'leva'
+import {MeshLineGeometry, MeshLineMaterial} from 'meshline'
 
 import styles from './index.module.css';
 
-import * as THREE from "three";
-import {getRandomInt, gaussianRandom} from "@site/src/components/utils/random";
-import Star from "@site/src/components/Star";
-import Galaxy from "@site/src/components/Galaxy";
-import Astronaut from "@site/src/components/Astronaut";
+extend({ MeshLineGeometry, MeshLineMaterial })
+useGLTF.preload('/img/astronaut.glb')
+useTexture.preload('/img/band.jpg')
 
-function genBackgroundStars() {
-    const stars = [];
-    for (let i = 0; i < 500; i++) {
-        const size = getRandomInt(15, 20);
-        const pos = new THREE.Vector3(
-            getRandomInt(-50000, 50000),
-            getRandomInt(-50000, 50000),
-            getRandomInt(-50000, 50000)
-        );
-        stars.push(<Star key={i} position={pos} size={size} />);
-    }
-    return stars;
-}
 
 export default function App(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
+  const { debug } = useControls({ debug: false })
+
   return (
     <Layout
       title={`Home`}
       description="Description will go into a meta tag in <head />">
       <header className={clsx('hero hero--primary', styles.heroBanner)}>
           <div className="heroContainer" style={{width: "100vw", height: "80vh"}}>
-              {/*<img*/}
-              {/*    style={{*/}
-              {/*      backgroundColor: "transparent",*/}
-              {/*      position:"absolute",*/}
-              {/*      zIndex:99,*/}
-              {/*    }}*/}
-              {/*    className={''}*/}
-              {/*    alt={''}*/}
-              {/*    src={'/img/astronaut_cr_12.png'}*/}
-              {/*/>*/}
-              <Canvas
-                  camera={{
-                      position: [5000, 2000, 1000],
-                      rotation: [-1, 0, 0],
-                      far: 100000,
-                  }}
-              >
-                  <color attach="background" args={["#000"]}/>
-                  <ambientLight color={"#fff"} intensity={5}/>
-                  {/*<axesHelper args={[20000]} />*/}
-                  <OrbitControls enableZoom={false}/> /* 마우스 스크롤을 위해 줌은 막습니다 */
-                  {genBackgroundStars()}
-                  <Galaxy/>
 
-                  <Physics interpolate gravity={[0, -5, 0]} timeStep={1 / 60}>
-                      <Astronaut />
-                  </Physics>
-              </Canvas>
+            <Canvas camera={{ position: [0, 0, 13], fov: 25 }}>
+              <ambientLight intensity={Math.PI} />
+              <Physics interpolate gravity={[0, -40, 0]} timeStep={1 / 60}>
+                <Band />
+              </Physics>
+
+              <OrbitControls enableZoom={false}/> /* 마우스 스크롤을 위해 줌은 막습니다 */
+              <Galaxy/>
+
+              <Environment background blur={0.75}>
+                <color attach="background" args={['black']} />
+                <Lightformer intensity={2} color="white" position={[0, -1, 5]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+                <Lightformer intensity={3} color="white" position={[-1, -1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+                <Lightformer intensity={3} color="white" position={[1, 1, 1]} rotation={[0, 0, Math.PI / 3]} scale={[100, 0.1, 1]} />
+                <Lightformer intensity={10} color="white" position={[-10, 0, 14]} rotation={[0, Math.PI / 2, Math.PI / 3]} scale={[100, 10, 1]} />
+              </Environment>
+            </Canvas>
+
           </div>
       </header>
         <main>
@@ -75,3 +54,4 @@ export default function App(): JSX.Element {
     </Layout>
   );
 }
+
