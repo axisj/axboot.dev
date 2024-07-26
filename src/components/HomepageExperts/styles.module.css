@@ -1,0 +1,36 @@
+.expertSection{
+    padding: 3rem 0;
+}
+
+.expertMsg{
+
+}
+.expert__header{
+    padding:1rem;
+}
+.expert__body{
+    font-style:italic;
+    font-size:0.938rem;
+    padding:1.25rem;
+    padding-top: 0;
+}
+.avatar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.avatar__image{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+.avatar__name{
+    font-size: 1.25rem;
+    font-weight: bold;
+    padding-top:0.75rem;
+}
+.avatar__pos{
+    font-size: 1rem;
+    color: var(--ifm-color-emphasis-700);
+}
