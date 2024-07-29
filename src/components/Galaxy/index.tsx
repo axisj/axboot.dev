@@ -1,9 +1,6 @@
 import * as THREE from "three";
 import { getRandomInt, gaussianRandom } from "@site/src/components/utils/random";
 import Star from "@site/src/components/Star";
-import { useControls } from "leva";
-
-
 
 function spiral(
     x: number,
@@ -85,7 +82,7 @@ export function BackgroundStars() {
             getRandomInt(-50000, 50000),
             getRandomInt(-50000, 50000)
         );
-        stars.push(<Star position={pos} size={size} />);
+        stars.push(<Star key={i} position={pos} size={size} />);
     }
     return stars;
 }
