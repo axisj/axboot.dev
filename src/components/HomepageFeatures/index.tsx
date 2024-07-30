@@ -75,7 +75,7 @@ const FeatureList: FeatureItem[] = [
     {
         title: '간편한 프로그램 생성',
         image: "/img/astronaut_cr_2.png",
-        level: false,
+        pro: false,
         // Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
         description: (
             <>
@@ -177,6 +177,7 @@ export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
+          <h2 className="margin-bottom--lg text--center">AXBoot Feature 🥾</h2>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

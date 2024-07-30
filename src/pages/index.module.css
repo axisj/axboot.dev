@@ -4,24 +4,121 @@
  */
 
 .heroContainer{
+  z-index: 1;
+  position: relative;
+  box-sizing: border-box;
+  width:100%;
+  height:50vh;
+  min-height:500px;
+  left:0;
+  top:0;
+  background:#0f0f10;
+  overflow: hidden;
 
 }
+.heroLayer1{
+  display: block;
+  position: absolute;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.heroLayer2{
+  display: flex;
+  align-items: center;
+  height:200px;
+  position: absolute;
+  right:50%;
+  top:calc(50% - 120px);
+  color: #fff;
+  font-weight:500;
+  font-size: 50px;
+  z-index: 2;
+  padding-left: 10%;
+  text-align: right;
+  line-height: 1.2em;
+  text-shadow: 2px 1px 3px #000;
+  font-style: italic;
+
+  @media screen and (max-width: 996px) {
+    font-size: 40px;
+    right:35%;
+  }
+}
+
+.heroLayer2 small {
+  color: #eee;
+}
+.heroLayer2 span {
+  display: inline;
+  word-break: break-word;
+}
+.heroLayer2 b{
+  font-weight:1000;
+}
+
+.axbcWrapper{
+  z-index: 3;
+  position: relative;
+  /*border:1px solid #f00;*/
+  /*min-height:420px;*/
+}
+.axbcFloater{
+  position: relative;
+  display: flex;
+  width:100%;
+  align-items: center;
+  /*top:-88px;*/
+  /*left:0;*/
+  margin-top: -88px;
+}
+.axbcDescBox{
+  display: flex;
+  height:100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding:30px;
+}
+
+.axbcImgDiv {
+  min-height: 500px;
+}
+.axbcImgDiv .swiper-slide {
+  height: 500px;
+}
+
+.axbcImg{
+  width:100%;
+}
+.axbcLogo{
+  width:200px;
+  margin-bottom:16px;
+}
+
 
 .heroBanner {
-  padding: 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  /*padding: 0;*/
+  /*text-align: center;*/
+  /*position: absolute;*/
+  /*overflow: hidden;*/
+}
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 0;
   }
+  .axbcDescBox{
+    align-items: center;
+  }
+
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

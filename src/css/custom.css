@@ -15,6 +15,17 @@
   --ifm-color-primary-lightest: #759af3;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --ifm-color-emphasis-100: #f5f6f7;
+  --ifm-color-emphasis-700: #606770;
+  --ifm-card-background-color: #ffffff;
+  --ifm-font-color-base: #1c1e21;
+
+  --ifm-h1-font-size: 2rem;
+  --ifm-h2-font-size: 1.8rem;
+  --ifm-h3-font-size: 1.2rem;
+  --ifm-h4-font-size: 1rem;
+  --ifm-h5-font-size: 0.875rem;
+  --ifm-h6-font-size: 0.85rem;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -27,5 +38,74 @@
   --ifm-color-primary-lighter: #5a7dce;
   --ifm-color-primary-lightest: #759af3;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-emphasis-100: #1c1e21;
+  --ifm-color-emphasis-700: #dadde1;
+  --ifm-card-background-color: #242526;
+  --ifm-font-color-base: #e3e3e3;
+
 }
 
+
+.footer.footer--dark {
+  --ifm-footer-background-color: #333;
+}
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+
+  --swiper-theme-color: red;
+  --swiper-navigation-color: red;
+  --swiper-pagination-color: red;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.autoplay-progress {
+  position: absolute;
+  right: 30px;
+  bottom: 50%;
+  transform: translateY(50%);
+  z-index: 10;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 1000;
+  font-size: 10px;
+  color: var(--swiper-theme-color);
+}
+
+.autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--swiper-theme-color);
+  fill: none;
+  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
