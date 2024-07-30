@@ -60,7 +60,10 @@ export default function App(): JSX.Element {
         </div>
         <div className={styles.heroLayer2}>
           <span>
-            <small>Float on the universe with</small> <b>AXB</b>OOT
+            Float on the universe with{" "}
+            <span className={styles.brandName}>
+              <b>AXB</b>OOT
+            </span>
           </span>
         </div>
       </header>
