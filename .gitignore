@@ -1,6 +1,7 @@
 /.idea
 /.backup
 /.yarn
+
 # Dependencies
 /node_modules
 

@@ -1,94 +1,136 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
+import useBaseUrl from "@docusaurus/useBaseUrl";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { Canvas, extend } from "@react-three/fiber";
+import { Astronaut } from "@site/src/components/Astronaut";
+import Galaxy, { BackgroundStars } from "@site/src/components/Galaxy";
+import HomepageExperts from "@site/src/components/HomepageExperts";
+import HomepageFeatures from "@site/src/components/HomepageFeatures";
 
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import { Physics } from '@react-three/rapier'
+import HomepageTweets from "@site/src/components/HomepageTweets";
+import Layout from "@theme/Layout";
+import AXBLogo from "@theme/ThemedImage";
+import clsx from "clsx";
+import { MeshLineGeometry, MeshLineMaterial } from "meshline";
+import { useRef } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
 
-import * as THREE from "three";
-import {getRandomInt, gaussianRandom} from "@site/src/components/utils/random";
-import Star from "@site/src/components/Star";
-import Galaxy from "@site/src/components/Galaxy";
-import Astronaut from "@site/src/components/Astronaut";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
-function genBackgroundStars() {
-    const stars = [];
-    for (let i = 0; i < 500; i++) {
-        const size = getRandomInt(15, 20);
-        const pos = new THREE.Vector3(
-            getRandomInt(-50000, 50000),
-            getRandomInt(-50000, 50000),
-            getRandomInt(-50000, 50000)
-        );
-        stars.push(<Star position={pos} size={size} />);
-    }
-    return stars;
-}
-
-const astronaout_style = {
-    backgroundColor: "transparent",
-    position:"absolute",
-    zIndex:99
-}
+extend({ MeshLineGeometry, MeshLineMaterial });
+useGLTF.preload("/img/astronaut.glb");
 
 export default function App(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+  // const { debug } = useControls({ debug: false })
+
+  const progressCircle = useRef(null);
+  const progressContent = useRef(null);
+  const onAutoplayTimeLeft = (s, time, progress) => {
+    progressCircle.current.style.setProperty("--progress", 1 - progress);
+    progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
+  };
+
   return (
-    <Layout
-      title={`Home`}
-      description="Description will go into a meta tag in <head />">
-      <header className={clsx('hero hero--primary', styles.heroBanner)}>
-          <div className="heroContainer" style={{width: "100vw", height: "80vh"}}>
-              <img
-                  style={astronaout_style}
-                  className={''}
-                  alt={''}
-                  src={'/img/astronaut_cr_12.png'}
-              />
-              <Canvas
-                  camera={{
-                      position: [10000, 10000, 10000],
-                      rotation: [-0.5, 0, 0],
-                      far: 100000,
-                  }}
-              >
-                  <color attach="background" args={["#000"]}/>
-                  <ambientLight color={"#fff"} intensity={5}/>
-                  {/*<axesHelper args={[20000]} />*/}
-                  <OrbitControls enableZoom={false}/> /* 마우스 스크롤을 위해 줌은 막습니다 */
-                  {genBackgroundStars()}
-                  <Galaxy/>
+    <Layout title={`Home`} description='Description will go into a meta tag in <head />'>
+      <header className={styles.heroContainer}>
+        <div className={styles.heroLayer1}>
+          <Canvas
+            camera={{
+              position: [5000, 5000, 5000],
+              rotation: [-0.5, 0, 0],
+              far: 100000,
+            }}
+          >
+            <color attach='background' args={["#0f0f10"]} />
 
+            <Astronaut />
 
-                  {/*<Physics interpolate gravity={[0, -5, 0]} timeStep={1 / 60}>*/}
-                  {/*    <Astronaut />*/}
-                  {/*</Physics>*/}
-              </Canvas>
-
-
-              {/*<Heading as="h1" className="hero__title">*/}
-              {/*  {siteConfig.title}*/}
-              {/*</Heading>*/}
-
-              {/*<p className="hero__subtitle">{siteConfig.tagline}</p>*/}
-              {/*<div className={styles.buttons}>*/}
-              {/*  <Link*/}
-              {/*    className="button button--secondary button--lg"*/}
-              {/*    to="/docs/intro">*/}
-              {/*    AXBoot Tutorial - 5min ⏱️*/}
-              {/*  </Link>*/}
-              {/*</div>*/}
-          </div>
+            <ambientLight intensity={Math.PI} />
+            {/*<axesHelper args={[20000]}/>*/}
+            <OrbitControls enableZoom={false} />
+            <BackgroundStars />
+            <Galaxy />
+          </Canvas>
+        </div>
+        <div className={styles.heroLayer2}>
+          <span>
+            <small>Float on the universe with</small> <b>AXB</b>OOT
+          </span>
+        </div>
       </header>
-        <main>
-            <HomepageFeatures/>
-        </main>
+
+      <div className={styles.axbcWrapper}>
+        <div className={styles.axbcFloater}>
+          <div className='container'>
+            <div className='row'>
+              <div className={clsx("col col--8")}>
+                <div className='text--center'>
+                  <Swiper
+                    spaceBetween={0}
+                    centeredSlides={true}
+                    autoplay={{
+                      delay: 5000,
+                      disableOnInteraction: false,
+                    }}
+                    pagination={{
+                      clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    onAutoplayTimeLeft={onAutoplayTimeLeft}
+                    className={styles.axbcImgDiv}
+                  >
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c.png"} loading='lazy' />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c.png"} loading='lazy' />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c.png"} loading='lazy' />
+                    </SwiperSlide>
+
+                    <div className='autoplay-progress' slot='container-end'>
+                      <svg viewBox='0 0 48 48' ref={progressCircle}>
+                        <circle cx='24' cy='24' r='20'></circle>
+                      </svg>
+                      <span ref={progressContent}></span>
+                    </div>
+                  </Swiper>
+                </div>
+              </div>
+              <div className={clsx("col col--4")}>
+                <div className={styles.axbcDescBox}>
+                  <AXBLogo
+                    className={styles.axbcLogo}
+                    alt={"AXBoot logo"}
+                    sources={{
+                      light: useBaseUrl("/img/axb_logo.svg"),
+                      dark: useBaseUrl("/img/axb_logo_dark.svg"),
+                    }}
+                  />
+                  <div>
+                    액스부트(AXBoot)는 확장성과 유지 관리 용이성을 갖춘 웹 애플리케이션 구축을 위해 다양한 내장 UI 구성
+                    요소와 도구 및 라이브러리 세트를 제공하는 고도로 모듈화된 웹 애플리케이션 프레임워크입(WAF)니다.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main>
+        <HomepageFeatures />
+        <HomepageTweets />
+        <HomepageExperts />
+      </main>
     </Layout>
   );
 }
