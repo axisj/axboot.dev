@@ -87,13 +87,25 @@ export default function App(): JSX.Element {
                     className={styles.axbcImgDiv}
                   >
                     <SwiperSlide>
-                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c.png"} loading='lazy' />
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_1.png"} loading='lazy' />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c.png"} loading='lazy' />
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_2.png"} loading='lazy' />
                     </SwiperSlide>
                     <SwiperSlide>
-                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c.png"} loading='lazy' />
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_3.png"} loading='lazy' />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_4.png"} loading='lazy' />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_5.png"} loading='lazy' />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_6.png"} loading='lazy' />
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <img className={styles.axbcImg} alt={"대표 이미지"} src={"/img/axboot_c_7.png"} loading='lazy' />
                     </SwiperSlide>
 
                     <div className='autoplay-progress' slot='container-end'>
