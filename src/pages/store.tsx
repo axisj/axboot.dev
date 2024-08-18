@@ -299,7 +299,7 @@ const StoreList4: StoreItem[] = [
   {
     title: "서울도시주택공사",
     subtitle: "상담 관리 SasS",
-    image: "/img/axbootbox_basic.png",
+    image: "/img/axbootbox_sh.png",
     tag: "AXBoot Embeded",
     description: (
       <>
@@ -315,7 +315,7 @@ const StoreList4: StoreItem[] = [
   {
     title: "삼성",
     subtitle: "급식 관리 SasS",
-    image: "/img/axbootbox_basic.png",
+    image: "/img/axbootbox_samsung.png",
     tag: "AXBoot Embeded",
     description: (
       <>
@@ -331,7 +331,7 @@ const StoreList4: StoreItem[] = [
   {
     title: "역도",
     subtitle: "경기 운영 관리 SasS",
-    image: "/img/axbootbox_basic.png",
+    image: "/img/axbootbox_weightlift.png",
     tag: "AXBoot Pro",
     description: (
       <>
@@ -347,7 +347,7 @@ const StoreList4: StoreItem[] = [
   {
     title: "위포",
     subtitle: "영업 관리 SasS",
-    image: "/img/axbootbox_basic.png",
+    image: "/img/axbootbox_wefor.png",
     tag: "AXBoot Pro",
     description: (
       <>
