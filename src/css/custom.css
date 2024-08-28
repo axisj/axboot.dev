@@ -49,6 +49,9 @@
   margin: 0 auto;
   max-width: var(--ifm-container-width);
   /*padding: 0 var(--ifm-spacing-horizontal);*/
+  @media (min-width: 1440px) {
+      max-width: var(--ifm-container-width-xl);
+  }
 }
 
 .footer.footer--dark {
