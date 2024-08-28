@@ -374,7 +374,7 @@ export default function App(): JSX.Element {
             <h2 className='margin-bottom--lg text--center'>PRODUCTS</h2>
             <div className='row'>
               {StoreList1.map((props, idx) => (
-                <div className={clsx("col col--4")}>
+                <div className={clsx("col col--4")} key={idx}>
                   <StoreBox key={idx} {...props} />
                 </div>
               ))}
@@ -386,7 +386,7 @@ export default function App(): JSX.Element {
             <h2 className='margin-bottom--lg text--center'>PACKAGES</h2>
             <div className='row'>
               {StoreList2.map((props, idx) => (
-                <div className={clsx("col col--3")}>
+                <div className={clsx("col col--3")} key={idx}>
                   <StoreBox key={idx} {...props} />
                 </div>
               ))}
@@ -398,7 +398,7 @@ export default function App(): JSX.Element {
             <h2 className='margin-bottom--lg text--center'>SERVICE</h2>
             <div className='row'>
               {StoreList3.map((props, idx) => (
-                <div className={clsx("col col--3")}>
+                <div className={clsx("col col--3")} key={idx}>
                   <StoreBox key={idx} {...props} />
                 </div>
               ))}
@@ -410,7 +410,7 @@ export default function App(): JSX.Element {
             <h2 className='margin-bottom--lg text--center'>Success Case</h2>
             <div className='row'>
               {StoreList4.map((props, idx) => (
-                <div className={clsx("col col--3")}>
+                <div className={clsx("col col--3")} key={idx}>
                   <StoreBox key={idx} {...props} />
                 </div>
               ))}

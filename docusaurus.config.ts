@@ -74,10 +74,9 @@ const config: Config = {
           position: "left",
           label: "API",
         },
-        { to: "/blog", label: "Blog", position: "left" },
-        // { to: "/success-stories", label: "Case Study", position: "left" },
+        { to: "/blog", label: "Case Study", position: "left" },
         { to: "/store", label: "Store", position: "left" },
-        { to: "/get-in-touch", label: "AXISJ", position: "left" },
+        { to: "/get-in-touch", label: "Get in touch", position: "right" },
         {
           type: "localeDropdown",
           position: "right",
