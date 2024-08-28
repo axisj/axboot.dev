@@ -93,6 +93,11 @@ const config: Config = {
         },
       ],
     },
+    docs: {
+      sidebar: {
+        hideable: false,
+      },
+    },
     footer: {
       style: "dark",
       links: [
