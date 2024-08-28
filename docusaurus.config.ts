@@ -1,4 +1,4 @@
-import { themes as prismThemes } from "prism-react-renderer";
+import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
@@ -48,7 +48,7 @@ const config: Config = {
           postsPerPage: 5,
         },
         theme: {
-          customCss: ["./src/css/fonts.css", "./src/css/custom.css", "./src/css/axboot.css"],
+          customCss: ["./src/css/fonts.css", "./src/css/custom.css", "./src/css/axboot.css", "./src/css/swiper.css"],
         },
       } satisfies Preset.Options,
     ],

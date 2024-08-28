@@ -28,6 +28,9 @@
   --ifm-h6-font-size: 0.85rem;
 
   --ifm-spacing-horizontal: 2rem;
+
+  --ifm-container-width: 100%;
+  --ifm-container-width-xl: 1400px;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -44,89 +47,4 @@
   --ifm-color-emphasis-700: #dadde1;
   --ifm-card-background-color: #242526;
   --ifm-font-color-base: #e3e3e3;
-
-}
-
-.navbar__inner {
-  margin: 0 auto;
-  max-width: var(--ifm-container-width);
-  padding: 0 var(--ifm-spacing-horizontal);
-
-  @media (min-width: 1440px) {
-    max-width: var(--ifm-container-width-xl);
-  }
-  @media (max-width: 997px) {
-    padding: 0;
-  }
-}
-
-.footer.footer--dark {
-  --ifm-footer-background-color: #333;
-}
-
-.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module {
-  margin: 0 auto;
-  max-width: var(--ifm-container-width);
-  @media (min-width: 1440px) {
-    max-width: var(--ifm-container-width-xl);
-  }
-}
-
-.swiper {
-  width: 100%;
-  height: 100%;
-
-  --swiper-theme-color: red;
-  --swiper-navigation-color: red;
-  --swiper-pagination-color: red;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-
-  /* Center slide text vertically */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 10px;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.autoplay-progress {
-  position: absolute;
-  right: 30px;
-  bottom: 50%;
-  transform: translateY(50%);
-  z-index: 10;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 1000;
-  font-size: 10px;
-  color: var(--swiper-theme-color);
-}
-
-.autoplay-progress svg {
-  --progress: 0;
-  position: absolute;
-  left: 0;
-  top: 0px;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  stroke-width: 4px;
-  stroke: var(--swiper-theme-color);
-  fill: none;
-  stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
-  stroke-dasharray: 125.6;
-  transform: rotate(-90deg);
 }

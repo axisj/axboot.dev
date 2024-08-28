@@ -13,14 +13,39 @@
 .navbar__title{
     display: none;
 }
-/*.navbar__title {*/
-/*    padding-top: 2px;*/
-/*    font-size: 18px;*/
-/*    font-family: "GmarketSans", sans-serif;*/
-/*    font-weight: 500;*/
-/*    line-height: 1;*/
-/*}*/
-/*.navbar__title::before {*/
-/*    content: "AXB";*/
-/*    font-weight: 700;*/
-/*}*/
+
+.navbar__inner {
+    margin: 0 auto;
+    max-width: var(--ifm-container-width);
+    padding: 0 var(--ifm-spacing-horizontal);
+
+    @media (min-width: 1440px) {
+        max-width: var(--ifm-container-width-xl);
+    }
+    @media (max-width: 997px) {
+        padding: 0;
+    }
+}
+
+.footer.footer--dark {
+    --ifm-footer-background-color: #333;
+}
+
+.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module {
+    margin: 0 auto;
+    max-width: var(--ifm-container-width);
+    @media (min-width: 1440px) {
+        max-width: var(--ifm-container-width-xl);
+    }
+}
+
+
+.markdown h1:first-child, .markdown h1 {
+    --ifm-h1-font-size: 1.8rem;
+}
+.markdown h2:first-child, .markdown h2 {
+    --ifm-h2-font-size: 1.3rem;
+}
+.markdown h3:first-child, .markdown h3 {
+    --ifm-h3-font-size: 1.1rem;
+}
