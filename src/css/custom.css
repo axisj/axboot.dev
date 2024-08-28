@@ -58,6 +58,13 @@
   --ifm-footer-background-color: #333;
 }
 
+.docRoot_node_modules-\@docusaurus-theme-classic-lib-theme-DocRoot-Layout-styles-module {
+  margin: 0 auto;
+  max-width: calc(var(--ifm-container-width) + 32px);
+  @media (min-width: 1440px) {
+    max-width: calc(var(--ifm-container-width-xl) + 32px);
+  }
+}
 
 .swiper {
   width: 100%;

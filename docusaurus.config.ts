@@ -44,7 +44,8 @@ const config: Config = {
           showReadingTime: true,
           blogTitle: "Case Study",
           blogDescription: "AXBoot Success Stories",
-          postsPerPage: "ALL",
+          blogSidebarCount: "ALL",
+          postsPerPage: 5,
         },
         theme: {
           customCss: ["./src/css/fonts.css", "./src/css/custom.css", "./src/css/axboot.css"],
@@ -96,52 +97,36 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Docs",
-          items: [
-            {
-              label: "Tutorial",
-              to: "/docs/intro",
-            },
-            {
-              label: "API",
-              to: "/docs/api/back-end/system-api",
-            },
-          ],
+          label: "Tutorial",
+          href: "/docs/intro",
         },
         {
-          title: "Community",
-          items: [
-            {
-              label: "Stack Overflow",
-              href: "https://stackoverflow.com/questions/tagged/docusaurus",
-            },
-            {
-              label: "Discord",
-              href: "https://discordapp.com/invite/docusaurus",
-            },
-            {
-              label: "Twitter",
-              href: "https://twitter.com/docusaurus",
-            },
-          ],
+          label: "API",
+          href: "/docs/api/back-end/system-api",
         },
         {
-          title: "More",
-          items: [
-            {
-              label: "Blog",
-              to: "/blog",
-            },
-            {
-              label: "AXISJ",
-              to: "http://axisj.com",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/axisj/axboot.dev",
-            },
-          ],
+          label: "Case Study",
+          href: "/case-study",
         },
+        {
+          label: "Store",
+          href: "/store",
+        },
+        {
+          label: "Get in touch",
+          href: "/get-in-touch",
+        },
+        {
+          label: "axisj.com",
+          href: "https://axisj.com",
+        },
+        // {
+        //   html: `
+        //     <a href="https://www.netlify.com" target="_blank" rel="noreferrer noopener" aria-label="Deploys by Netlify">
+        //       <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" width="114" height="51" />
+        //     </a>
+        //   `,
+        // },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} AXISJ, Inc. Built with Docusaurus.`,
     },
