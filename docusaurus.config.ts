@@ -40,7 +40,11 @@ const config: Config = {
           editUrl: "https://github.com/axisj/axboot.dev/tree/main",
         },
         blog: {
+          routeBasePath: "case-study",
           showReadingTime: true,
+          blogTitle: "Case Study",
+          blogDescription: "AXBoot Success Stories",
+          postsPerPage: "ALL",
         },
         theme: {
           customCss: ["./src/css/fonts.css", "./src/css/custom.css", "./src/css/axboot.css"],
@@ -74,10 +78,9 @@ const config: Config = {
           position: "left",
           label: "API",
         },
-        { to: "/blog", label: "Blog", position: "left" },
-        // { to: "/success-stories", label: "Case Study", position: "left" },
+        { to: "/case-study", label: "Case Study", position: "left" },
         { to: "/store", label: "Store", position: "left" },
-        { to: "/get-in-touch", label: "AXISJ", position: "left" },
+        { to: "/get-in-touch", label: "Get in touch", position: "right" },
         {
           type: "localeDropdown",
           position: "right",
