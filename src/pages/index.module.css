@@ -120,6 +120,7 @@
 
 
 .heroBanner {
+  --ifm-hero-background-color:#0f0f10;
   /*padding: 0;*/
   /*text-align: center;*/
   /*position: absolute;*/
@@ -139,5 +140,9 @@
     align-items: center;
   }
 
+}
+
+section{
+  padding: 3rem 0;
 }
 
