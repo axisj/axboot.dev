@@ -1,0 +1,13 @@
+.subTitle {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/**
+  Blog post title should be smaller on smaller devices
+**/
+@media (max-width: 576px) {
+  .subTitle {
+    font-size: 1.2rem;
+  }
+}
