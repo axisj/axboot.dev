@@ -1,6 +1,6 @@
 ---
 slug: wefor-tm
-sub_title: (주)위포, AXISJ
+sub_title: AXISJ, 위포
 title: 텔레마케팅 솔루션
 description: 텔레마케팅을 위한 다양한 기능들을 제공하는 솔루션 입니다.
 authors: [thomas]
