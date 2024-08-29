@@ -38,6 +38,9 @@ const config: Config = {
         docs: {
           sidebarPath: "./sidebars.ts",
           editUrl: "https://github.com/axisj/axboot.dev/tree/main",
+          remarkPlugins: [
+            [require('@docusaurus/remark-plugin-npm2yarn'), {sync: true}],
+          ],
         },
         blog: {
           routeBasePath: "case-study",
@@ -46,6 +49,12 @@ const config: Config = {
           blogDescription: "AXBoot Success Stories",
           blogSidebarCount: "ALL",
           postsPerPage: 5,
+          remarkPlugins: [
+            [
+              require('@docusaurus/remark-plugin-npm2yarn'),
+              {converters: ['pnpm']},
+            ],
+          ],
         },
         theme: {
           customCss: ["./src/css/fonts.css", "./src/css/custom.css", "./src/css/axboot.css", "./src/css/swiper.css"],

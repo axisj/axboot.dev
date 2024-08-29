@@ -21,45 +21,25 @@ AX : Application eXperience, Boot : Bootstrap의 합성어로, 최종 사용자�
 간결하고 잘 정리된 UI시스템과 빠른 반응속도를 제공하여 사용자들이 편리하게 사용할 수 있도록 도와주고 백오피스 환경에서 반드시 필요한 권한관리와 사용자 역할별 
 메뉴 관리시스템을 사용 할 수 있어. 빠르고 효율적인 백오피스 시스템을 구축할 수 있습니다.
 
-### 템플릿을 이용한 빠른 개발 (프로그램 만들기)
+### 템플릿으로 프로그램 만들기
+프로그램 생성뿐 아니라 모달또한 템플릿을 이용하여 빠르게 생성할 수 있습니다. 
+- 프로그램 생성 설정 : `src/makeProgramConfig.ts`
+- 모달 생성 설정 : `src/makeModalProgramConfig.ts`
+
+위 설정 파일을 수정하여 생성 하고자 하는 정보를 입력한 후 다음의 커멘드를 터미널에 입력하면 프로그램과 모달을 생성할 수 있습니다.
 ```bash
 npm run make:program
 ```
-위 명령어를 실행하면 프로그램을 생성할 수 있는 템플릿을 제공합니다. 
-생성할 프로그램 설정은 아래의 `src/makeProgramConfig.ts` 파일을 수정하여 사용할 수 있습니다.
-
-```typescript title="src/makeProgramConfig.ts"
-import { ProgramConfig } from "./@core/scripts/@types";
-
-const programConfig: ProgramConfig = {
-  pagesDir: "./src/pages",
-  templateDir: "./src/@core/pages",
-  programTypeFile: "./src/router/@programTypes.ts",
-  pageRouteFile: "./src/router/PageRoute.tsx",
-  routesFile: "./src/router/Routes.tsx",
-  serviceMockUpDataFile: "./src/services/serviceMockUpData.ts",
-  programs: [
-    {
-      code: "SRV_SALES_SHEET",
-      name: ["salesSheet"],
-      type: "LIST_AND_MODAL_MF",
-      url: "salesSheet",
-    },
-  ],
-};
-
-export default programConfig;
-```
-
-programs에 추가하고 싶은 프로그램의 정보와 템플릿 타입을 설정 할 수 있고 필요에 따라서 
-여러개의 프로그램을 한번에 생성하거나 작업을 하는 도중에 한개씩 프로그램을 만들 수 도 있습니다. 
-
-`programConfig`에 대한 자세한 내용은 [여기](/docs/api/front-end/core-scripts/make-program.md)를 참고하세요.
-
-### 템플릿을 이용한 빠른 개발 (모달 만들기)
-
-프로그램 생성뿐 아니라 모달또한 템플릿을 이용하여 빠르게 생성할 수 있습니다. 다음의 명령어를 이용해 모달을 생성할 수 있고 모달 생성 설정은 `src/makeModalProgramConfig.ts` 파일을 수정하여 사용할 수 있습니다.
-
 ```bash
 npm run make:modal
 ```
+
+템플릿 설정 파일에 대한 자세한 내용은 [여기](/docs/tutorial/front-end/template)를 참고하세요.
+
+### 진보된 탭 시스템
+
+![axboot_tab_control.png](tutorial%2Fimages%2Faxboot_tab_control.png)
+
+AXBoot의 프로그램 페이지는 탭시스템과 연계되어 작동됩니다. 사용자가 페이지를 열때마다 새로운 탭이 생성되고 
+브라우저 URL과 탭은 연계되어 작동 됩니다. 또한 탭내에 사용자가 입력한 모든 정보는 indexDB에 저장되어 관리되어 브라우저를 새로고치거나 히스토리 이동시에도
+사용자가 입력한 정보는 유지됩니다.

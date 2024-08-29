@@ -13,19 +13,14 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
-    // 'installation',
-    'quick-start-guide',
-    'system-requirement',
     {
       type: 'category',
-      label: 'Back-End',
+      label: "Getting Started",
       items: [
-        'tutorial/back-end/dev-environment',
-        'tutorial/back-end/spring-security',
-        'tutorial/back-end/code-generation',
-        'tutorial/back-end/create-api-interface',
-        'tutorial/back-end/system-api-customizing',
-      ],
+        'tutorial/getting-started/installation',
+        'tutorial/getting-started/development',
+        'tutorial/getting-started/build'
+      ]
     },
     {
       type: 'category',
@@ -39,6 +34,17 @@ const sidebars: SidebarsConfig = {
         'tutorial/front-end/service-repository',
         'tutorial/front-end/i18n',
         'tutorial/front-end/theme',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Back-End',
+      items: [
+        'tutorial/back-end/dev-environment',
+        'tutorial/back-end/spring-security',
+        'tutorial/back-end/code-generation',
+        'tutorial/back-end/create-api-interface',
+        'tutorial/back-end/system-api-customizing',
       ],
     }
   ],
