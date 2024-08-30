@@ -20,6 +20,12 @@ sidebar_position: 1
 npm init axboot@latest
 ```
 
+사이트 시작하기
+```bash
+cd my-website
+npm run dev
+```
+
 ## Project structure {#project-structure}
 
 Assuming you chose the classic template and named your site `my-website`, you will see the following files generated under a new directory `my-website/`:
