@@ -83,7 +83,7 @@ console.table(
 
 ## Start development server
 
-```bash
+```shell
 npm run dev
 ```
 
