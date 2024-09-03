@@ -105,4 +105,6 @@ my-app
 
 ## Problems? {#problems}
 
-Ask for help on [Stack Overflow](https://stackoverflow.com/questions/tagged/docusaurus), on our [GitHub repository](https://github.com/facebook/docusaurus), our [Discord server](https://discordapp.com/invite/docusaurus), or [Twitter](https://twitter.com/docusaurus).
+질문이 있으신 경우 [Stack Overflow](https://stackoverflow.com/questions/tagged/axboot), 
+[GitHub repository](https://github.com/axisj/axboot) 또는 
+[Discord server](https://discordapp.com/invite/axboot)를 이용해주세요.
