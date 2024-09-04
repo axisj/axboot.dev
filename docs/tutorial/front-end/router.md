@@ -49,16 +49,57 @@ routes["EXAMPLES"] = {
   children: example_router,
 };
 
-// 라우터 오브젝트 변환 (각 라우터마다 가진 path 값을 부모의 path와 합침 ex : /sample/list)
+// routes 오브젝트 변환 
 // highlight-start
 export const ROUTES = getRoutes(routes, "/") as typeof routes;
 export const ROUTES_LIST: RawRoute[] = getFlattedRoutes(ROUTES);
 // highlight-end
 ```
 
-라우터 값을 객체 형태로 관리하기 위해 라우터를 선언하여 사용하는 방식을 사용합니다. 메뉴에 접근해야 하거나 정보를 가져와야 하는 경우에는 `ROUTES`를 사용합니다.
-- ROUTES: 라우터 객체
+routes를 보다 빠르고 편리하게 사용하기 위해 ROUTES, ROUTES_LIST로 만들어 사용합니다. 
+- ROUTES: 라우터 객체 (각 라우터마다 가진 path 값을 부모의 path와 합침 ex : /sample/list)
 - ROUTES_LIST: 라우터 리스트 (평탄화된 라우터 리스트)
+
+또한 템플릿 라우터인 EXAMPLES를 연결하고 있는데 이는 App에서 템플릿을 출력하는 경우를 위해 사용됩니다.
+
+
+
+### ROUTES 사용 예시
+```typescript
+const onClickItem = React.useCallback(
+  (params: AXFDGClickParams<DtoItem>) => {
+    linkByRoute(EXAMPLE_ROUTERS.DETAIL, { id: params.item.id });
+  },
+  [linkByRoute],
+);
+```
+라우터의 정보를 알고 있는 경우 라우터 오브젝트의 사용하여 페이지 이동을 할 수 있습니다.
+
+```typescript
+function RestrictAuth({ children }: Props) {
+  const location = useLocation();
+  const me = useUserStore((s) => s.me);
+
+  if (me) {
+    return <Navigate to={ROUTES.HOME.path} state={{ from: location }} replace />;
+  }
+
+  return children;
+}
+```
+로그인 한 사용자가 로그인 페이지에 접근하려고 할 때, 메인 페이지로 이동시키는 예시입니다.
+
+### ROUTES_LIST 사용 예시
+```typescript
+  const currentRoute = React.useMemo(
+    () =>
+      ROUTES_LIST.find((route) => {
+        return matchPath(route.path, location.pathname);
+      }),
+    [],
+  );
+```
+라우터중에서 현재 페이지에 해당하는 라우터를 찾아서 사용할 수 있습니다.
 
 ## Routing
 
