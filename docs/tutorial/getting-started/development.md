@@ -90,3 +90,9 @@ npm run dev
 ![run-dev.png](..%2Fimages%2Frun-dev.png)
 
 정상적으로 실행되면 브라우저에서 `http://localhost:20241`로 접속할 수 있습니다.
+
+:::tip 화면 개발하기
+- 프로그램 추가를 위해서는 [라우터 설정](/docs/tutorial/front-end/router)을 참조하세요.
+- 프로그램의 사용법은 [프로그램 생성](/docs/tutorial/front-end/program)을 참조하세요.
+:::
+
