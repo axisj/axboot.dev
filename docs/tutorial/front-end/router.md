@@ -6,6 +6,11 @@ sidebar_position: 1
 AXBoot는 React Router를 사용하여 라우팅을 처리합니다. 라우터는 페이지를 이동할 때 사용되며, 페이지 이동에 따라 URL이 변경됩니다.
 `src/router/Routes.tsx` 파일에 등록된 메뉴라면 Tab으로 열리고 TabStore에 추가 되지 않습니다.
 
+:::info TabStore 란?
+AXBoot를 사용하면 어프리케이션 탭 시스템을 별도의 설정 없이 사용할 수 있습니다.
+TabStore는 페이지 이동에 따라 Tab을 추가하거나 제거하는 역할을 합니다. TabStore에 등록된 Tab은 페이지 이동에 따라 Tab이 추가되거나 제거됩니다.
+:::
+
 ## 라우터 패스 선언
 ```typescript title="src/router/Routes.tsx"
 import React from "react";
