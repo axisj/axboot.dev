@@ -55,7 +55,9 @@ const config: Config = {
       } satisfies Preset.Options,
     ],
   ],
-
+  stylesheets: [
+    "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap",
+  ],
   themeConfig: {
     // Replace with your project's social card
     image: "img/axboot-sns.jpg",

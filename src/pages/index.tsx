@@ -59,12 +59,50 @@ export default function App(): JSX.Element {
           </Canvas>
         </div>
         <div className={styles.heroLayer2}>
-          <span>
-            Float on the universe with{" "}
-            <span className={styles.brandName}>
-              <b>AXB</b>OOT
-            </span>
-          </span>
+          <div className={`${styles.heroTypoWrap} ${styles.gradientBorder}`}>
+            <div
+              style={{
+                fontFamily: "Fira Code",
+                fontOpticalSizing: "auto",
+                fontWeight: 100,
+                fontStyle: "normal",
+                margin: 0,
+                padding: 0,
+                fontSize: "1rem",
+              }}
+            >{`{/* Hook into the universe with */}`}</div>
+            <div
+              style={{
+                fontFamily: "Fira Code",
+                fontOpticalSizing: "auto",
+                fontWeight: 700,
+                fontStyle: "normal",
+                margin: 0,
+                padding: 0,
+                fontSize: "2rem",
+              }}
+            >
+              {`<AXBOOT />︎`}
+              <span
+                style={{
+                  fontFamily: "Noto Emoji",
+                  fontOpticalSizing: "auto",
+                  fontWeight: 400,
+                  fontStyle: "normal",
+                  margin: 0,
+                  padding: 0,
+                  fontSize: "2rem",
+                }}
+              >
+                ✌
+              </span>
+            </div>
+          </div>
+          {/*<span>*/}
+          {/*<span className={styles.brandName}>*/}
+          {/*  <b>AXB</b>OOT*/}
+          {/*</span>*/}
+          {/*</span>*/}
         </div>
       </header>
 
